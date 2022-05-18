@@ -41,13 +41,16 @@ How do annual members and casual riders use Cyclistic bikes differently?
 ## Data Sources
 Historical bike trip data provided by Motivate International Inc. under licence from Divvy Bikes. (The datasets have a different name because Cyclistic is a fictional company for the purpose of the Google Data Analytic Capstone project). Personal identifiable information are not available due to data-privacy.
 
-Dataset was downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html. For the purpose of this analysis, 12 months of data from May 2021 to April 2022 will be prepared and analysed. The most recent data available is April 2022. Total data points is approximately 5.7M.
+Dataset was downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html. For the purpose of this analysis, 12 months of data from May 2021 to April 2022 will be prepared and analysed. The most recent data available is April 2022. Total data size is approximately 1.61GB.
 
 ## Dataset was checked for credibility
 
 * The dataset is assumed to be reliable (data is based on a fictitious entity), original, cited as it is provided under licence as above.
 * Data is current as the most recent data used is April 2022
 * There are missing data points for start station and end station and geographic latitude and longitude in the dataset therefore the data is not as comprehensive as it could have been. We will keep this in mind and account for these during data analysis.
+
+## Documentation, Cleaning and Preparation of data for analysis
+The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in spreadsheets will be time-consuming and slow compared to SQL or R. Chosed R simply because I could do both data wrangling and analysis/ visualizations in the same platform. It is also an opportunity for me to learn R better.
 
 ## Limitation/Assumptions made of data available
 
