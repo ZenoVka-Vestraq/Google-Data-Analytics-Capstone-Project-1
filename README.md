@@ -65,7 +65,7 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 * No information on where users lives in the Cyclistic area of operations, this is due to data-privacy issues prohibit the use of users’ personally identifiable information.
 * Analysis and insights will be limited on the casual rider’s behaviour as there are no data on types of purchase (single pass or full-day pass) and if there are multiple purchases from the same casual rider.
 
-## Data Preparation
+## DATA PREPARATION
 
 ### Packages used
 
