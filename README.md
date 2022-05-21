@@ -69,72 +69,72 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 
 ### Packages used
 
-> install.packages("tidyverse")
-> install.packages("lubridate")
-> install.packages("janitor")
-> install.packages("data.table")
+* install.packages("tidyverse")
+* install.packages("lubridate")
+* install.packages("janitor")
+* install.packages("data.table")
 
 ### Libraries loaded
 
-> library(tidyverse)
-> library(lubridate)
-> library(janitor)
-> library(data.table)
+* library(tidyverse)
+* library(lubridate)
+* library(janitor)
+* library(data.table)
 
 ### Loading datasets
 
-> tripdata_202105 <- read.csv("202105-divvy-tripdata.csv")
-> tripdata_202106 <- read.csv("202106-divvy-tripdata.csv")
-> tripdata_202107 <- read.csv("202107-divvy-tripdata.csv")
-> tripdata_202108 <- read.csv("202108-divvy-tripdata.csv")
-> tripdata_202109 <- read.csv("202109-divvy-tripdata.csv")
-> tripdata_202110 <- read.csv("202110-divvy-tripdata.csv")
-> tripdata_202111 <- read.csv("202111-divvy-tripdata.csv")
-> tripdata_202112 <- read.csv("202112-divvy-tripdata.csv")
-> tripdata_202201 <- read.csv("202201-divvy-tripdata.csv")
-> tripdata_202202 <- read.csv("202202-divvy-tripdata.csv")
-> tripdata_202203 <- read.csv("202203-divvy-tripdata.csv")
-> tripdata_202204 <- read.csv("202204-divvy-tripdata.csv")
+* tripdata_202105 <- read.csv("202105-divvy-tripdata.csv")
+* tripdata_202106 <- read.csv("202106-divvy-tripdata.csv")
+* tripdata_202107 <- read.csv("202107-divvy-tripdata.csv")
+* tripdata_202108 <- read.csv("202108-divvy-tripdata.csv")
+* tripdata_202109 <- read.csv("202109-divvy-tripdata.csv")
+* tripdata_202110 <- read.csv("202110-divvy-tripdata.csv")
+* tripdata_202111 <- read.csv("202111-divvy-tripdata.csv")
+* tripdata_202112 <- read.csv("202112-divvy-tripdata.csv")
+* tripdata_202201 <- read.csv("202201-divvy-tripdata.csv")
+* tripdata_202202 <- read.csv("202202-divvy-tripdata.csv")
+* tripdata_202203 <- read.csv("202203-divvy-tripdata.csv")
+* tripdata_202204 <- read.csv("202204-divvy-tripdata.csv")
 
 ### colnames() for column names consistency
 
-> colnames(tripdata_202204)
-> colnames(tripdata_202203)
-> colnames(tripdata_202202)
-> colnames(tripdata_202201)
-> colnames(tripdata_202112)
-> colnames(tripdata_202111)
-> colnames(tripdata_202110)
-> colnames(tripdata_202109)
-> colnames(tripdata_202108)
-> colnames(tripdata_202107)
-> colnames(tripdata_202106)
-> colnames(tripdata_202105)
+* colnames(tripdata_202204)
+* colnames(tripdata_202203)
+* colnames(tripdata_202202)
+* colnames(tripdata_202201)
+* colnames(tripdata_202112)
+* colnames(tripdata_202111)
+* colnames(tripdata_202110)
+* colnames(tripdata_202109)
+* colnames(tripdata_202108)
+* colnames(tripdata_202107)
+* colnames(tripdata_202106)
+* colnames(tripdata_202105)
 
 ### str() for data structure and data types consistency
 
-> str(tripdata_202204)
-> str(tripdata_202203)
-> str(tripdata_202202)
-> str(tripdata_202201)
-> str(tripdata_202112)
-> str(tripdata_202111)
-> str(tripdata_202110)
-> str(tripdata_202109)
-> str(tripdata_202107)
-> str(tripdata_202106)
-> str(tripdata_202105)
+* str(tripdata_202204)
+* str(tripdata_202203)
+* str(tripdata_202202)
+* str(tripdata_202201)
+* str(tripdata_202112)
+* str(tripdata_202111)
+* str(tripdata_202110)
+* str(tripdata_202109)
+* str(tripdata_202107)
+* str(tripdata_202106)
+* str(tripdata_202105)
 
 ### Note - column names, data structure and data types are consistent throughout the checks.
 
 ### Combine datasets into one dataframe
 
-> all_trips <- bind_rows(tripdata_202204,tripdata_202203,tripdata_202202,tripdata_202201,tripdata_202112,tripdata_202111,tripdata_202110,tripdata_202109,tripdata_202108,tripdata_202107,tripdata_202106,tripdata_202105)
+* all_trips <- bind_rows(tripdata_202204,tripdata_202203,tripdata_202202,tripdata_202201,tripdata_202112,tripdata_202111,tripdata_202110,tripdata_202109,tripdata_202108,tripdata_202107,tripdata_202106,tripdata_202105)
 
 ### Clean up required - "started_at" and "ended_at" datatype is in char instead of datetime. Convert all from char to datetime.
 
-> all_trips[['started_at']] <- ymd_hms(all_trips[['started_at']])
-> all_trips[['ended_at']] <- ymd_hms(all_trips[['ended_at']])
+* all_trips[['started_at']] <- ymd_hms(all_trips[['started_at']])
+* all_trips[['ended_at']] <- ymd_hms(all_trips[['ended_at']])
 
 ### Note - 1186924 entries failed to parse as they were empty.
 
