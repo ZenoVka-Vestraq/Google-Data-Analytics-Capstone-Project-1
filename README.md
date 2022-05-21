@@ -15,7 +15,7 @@ This capstone case study on Cyclistic bike share is part of Google Data Analytic
 
 ### Case Study Objective
 
-> Cyclistic, a bike share company in Chicago wants to understand how casual riders and annual members use Cyclistic bikes differently. These insights will be used to design a new marketing strategy to convert casual riders into annual member as the company believes that the company’s future success depends on maximizing the number of annual memberships
+Cyclistic, a bike share company in Chicago wants to understand how casual riders and annual members use Cyclistic bikes differently. These insights will be used to design a new marketing strategy to convert casual riders into annual member as the company believes that the company’s future success depends on maximizing the number of annual memberships
 
 ### Brief background and summary of case study company
 
@@ -30,11 +30,11 @@ The director of marketing, Lily Moreno, believes that maximizing the number of a
 
 ### Questions to explore relating to business task:
 
-#### Main: 
+> #### Main: 
 
 How do annual members and casual riders use Cyclistic bikes differently?
 
-#### Sub: 
+>> #### Sub: 
 
 1. What are the biggest differences in behaviours between casual riders and annual members?
 2. Are the differences in behaviours the reasons why casual riders stay casual, and annual members are willing to maintain their subscription?
