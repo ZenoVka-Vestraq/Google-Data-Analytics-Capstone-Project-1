@@ -122,7 +122,7 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 > <br>str(tripdata_202106)
 > <br>str(tripdata_202105)
 
-#### *Note - column names, data structure and data types are consistent throughout the checks.
+#### *Note - column names, data structure and data types are consistent throughout the checks.*
 
 ### Combine datasets into one dataframe
 
@@ -133,7 +133,7 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 > all_trips[['started_at']] <- ymd_hms(all_trips[['started_at']])
 > <br>all_trips[['ended_at']] <- ymd_hms(all_trips[['ended_at']])
 
-### *Note - 1186924 entries failed to parse as they were empty.
+### *Note - 1186924 entries failed to parse as they were empty.*
 
 ## DATA PROCESSING
 
