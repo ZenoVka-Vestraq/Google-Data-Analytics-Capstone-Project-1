@@ -46,7 +46,7 @@ The director of marketing, Lily Moreno, believes that maximizing the number of a
 ### Data Sources
 Historical bike trip data provided by Motivate International Inc. under licence from Divvy Bikes. (The datasets have a different name because Cyclistic is a fictional company for the purpose of the Google Data Analytic Capstone project). Personal identifiable information are not available due to data-privacy.
 
-Dataset was downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html. For the purpose of this analysis, 12 months of data from May 2021 to April 2022 will be prepared and analysed. The most recent data available is April 2022. Total data size is approximately 1.61GB.
+> Dataset was downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html. For the purpose of this analysis, 12 months of data from May 2021 to April 2022 will be prepared and analysed. The most recent data available is April 2022. Total data size is approximately 1.61GB.
 
 ### Dataset was checked for credibility
 
@@ -66,10 +66,10 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 
 ### Packages used
 
-* install.packages("tidyverse")
-* install.packages("lubridate")
-* install.packages("janitor")
-* install.packages("data.table")
+> install.packages("tidyverse")
+>  install.packages("lubridate")
+>   install.packages("janitor")
+>    install.packages("data.table")
 
 ### Libraries loaded
 
