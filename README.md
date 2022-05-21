@@ -67,9 +67,9 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 ### Packages used
 
 > install.packages("tidyverse")
->  install.packages("lubridate")
->   install.packages("janitor")
->    install.packages("data.table")
+> <br>install.packages("lubridate")
+> <br>install.packages("janitor")
+> <br>install.packages("data.table")
 
 ### Libraries loaded
 
