@@ -73,10 +73,10 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 
 ### Libraries loaded
 
-* library(tidyverse)
-* library(lubridate)
-* library(janitor)
-* library(data.table)
+> library(tidyverse)
+> <br>library(lubridate)
+> <br>library(janitor)
+> <br>library(data.table)
 
 ### Loading datasets
 
