@@ -10,13 +10,12 @@ This capstone case study on Cyclistic bike share is part of Google Data Analytic
 
 ### The data exploration, cleaning and analysis are done using:
 
-1. Spreadsheets (Google Sheet and Microsoft Excel)
-2. R Studio Cloud
-3. Tableau
+1. R Studio
+2. Tableau
 
 ### Case Study Objective
 
-Cyclistic, a bike share company in Chicago wants to understand how casual riders and annual members use Cyclistic bikes differently. These insights will be used to design a new marketing strategy to convert casual riders into annual member as the company believes that the company’s future success depends on maximizing the number of annual memberships
+> Cyclistic, a bike share company in Chicago wants to understand how casual riders and annual members use Cyclistic bikes differently. These insights will be used to design a new marketing strategy to convert casual riders into annual member as the company believes that the company’s future success depends on maximizing the number of annual memberships
 
 ### Brief background and summary of case study company
 
