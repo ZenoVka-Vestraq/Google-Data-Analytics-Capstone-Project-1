@@ -159,6 +159,6 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 ### Rename columns for better readability
  
 * all_trips <- all_trips %>% 
-*              rename(ride_type = rideable_type,start_time = started_at,end_time = ended_at,customer_type = member_casual)
+<br> rename(ride_type = rideable_type,start_time = started_at,end_time = ended_at,customer_type = member_casual)
   
 ###
