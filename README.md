@@ -31,14 +31,12 @@ The director of marketing, Lily Moreno, believes that maximizing the number of a
 ### Questions to explore relating to business task:
 
 > #### Main: 
-
-How do annual members and casual riders use Cyclistic bikes differently?
+> How do annual members and casual riders use Cyclistic bikes differently?
 
 >> #### Sub: 
-
-1. What are the biggest differences in behaviours between casual riders and annual members?
-2. Are the differences in behaviours the reasons why casual riders stay casual, and annual members are willing to maintain their subscription?
-3. What causes the differences in behaviours?
+>> 1. What are the biggest differences in behaviours between casual riders and annual members?
+>> 2. Are the differences in behaviours the reasons why casual riders stay casual, and annual members are willing to maintain their subscription?
+>> 3. What causes the differences in behaviours?
 
 ### Deliverables:
 * Insights on users behaviours.
