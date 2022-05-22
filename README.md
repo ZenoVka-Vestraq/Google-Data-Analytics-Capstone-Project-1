@@ -122,7 +122,22 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 > <br>str(tripdata_202106)
 > <br>str(tripdata_202105)
 
-#### *Note - column names, data structure and data types are consistent throughout the checks.*
+#### *Note - data type for started_at and ended_at were in chr, and needs to be changed to dttm. dateTime format of these 2 column are not consistent throughout the checks as well, I have decided to align all data to y-m-d HMS format.*
+
+### Changing dateTime format for tripdata_202105, tripdata_202203 and tripdata_202204
+
+> tripdata_202105_processed <- tripdata_202105_processed %>%
+> <br> mutate(across(c(started_at, ended_at), dmy_hm))
+> <br>
+> <br> tripdata_202203_processed <- tripdata_202203_processed %>%
+> <br> mutate(across(c(started_at, ended_at), dmy_hm))
+> <br>
+> <br> tripdata_202204_processed <- tripdata_202204_processed %>%
+> <br> mutate(across(c(started_at, ended_at), dmy_hm))
+
+### Changing datatype from chr to dttm for the rest of the datasets
+
+
 
 ### Combine datasets into one dataframe
 
