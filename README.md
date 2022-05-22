@@ -124,31 +124,27 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 
 #### *Note - data type for started_at and ended_at were in chr, and needs to be changed to dttm. dateTime format of these 2 column are not consistent throughout the checks as well, I have decided to align all data to y-m-d HMS format.*
 
-### Changing dateTime format for tripdata_202105, tripdata_202203 and tripdata_202204
+### Cleanup Required - Changing dateTime format for tripdata_202105, tripdata_202203 and tripdata_202204
 
-> tripdata_202105_processed <- tripdata_202105_processed %>%
-> <br> mutate(across(c(started_at, ended_at), dmy_hm))
-> <br>
-> <br> tripdata_202203_processed <- tripdata_202203_processed %>%
-> <br> mutate(across(c(started_at, ended_at), dmy_hm))
-> <br>
-> <br> tripdata_202204_processed <- tripdata_202204_processed %>%
-> <br> mutate(across(c(started_at, ended_at), dmy_hm))
+> tripdata_202105_processed <- tripdata_202105_processed %>% mutate(across(c(started_at, ended_at), dmy_hms))
+> <br> tripdata_202203_processed <- tripdata_202203_processed %>% mutate(across(c(started_at, ended_at), dmy_hms))
+> <br> tripdata_202204_processed <- tripdata_202204_processed %>% mutate(across(c(started_at, ended_at), dmy_hms))
 
-### Changing datatype from chr to dttm for the rest of the datasets
+### Cleanup Required - Changing datatype from chr to dttm for the rest of the datasets
 
-
+> tripdata_202106_processed <- tripdata_202106 %>% mutate(across(c(started_at, ended_at), ~ as.POSIXct(.x, format = "%Y-%m-%d %H:%M:%S") %>% ymd_hms())) 
+> <br> tripdata_202107_processed <- tripdata_202107 %>% mutate(across(c(started_at, ended_at), ~ as.POSIXct(.x, format = "%Y-%m-%d %H:%M:%S") %>% ymd_hms()))
+> <br> tripdata_202108_processed <- tripdata_202108 %>% mutate(across(c(started_at, ended_at), ~ as.POSIXct(.x, format = "%Y-%m-%d %H:%M:%S") %>% ymd_hms()))
+> <br> tripdata_202109_processed <- tripdata_202109 %>% mutate(across(c(started_at, ended_at), ~ as.POSIXct(.x, format = "%Y-%m-%d %H:%M:%S") %>% ymd_hms()))
+> <br> tripdata_202110_processed <- tripdata_202110 %>% mutate(across(c(started_at, ended_at), ~ as.POSIXct(.x, format = "%Y-%m-%d %H:%M:%S") %>% ymd_hms()))
+> <br> tripdata_202111_processed <- tripdata_202111 %>% mutate(across(c(started_at, ended_at), ~ as.POSIXct(.x, format = "%Y-%m-%d %H:%M:%S") %>% ymd_hms()))
+> <br> tripdata_202112_processed <- tripdata_202112 %>% mutate(across(c(started_at, ended_at), ~ as.POSIXct(.x, format = "%Y-%m-%d %H:%M:%S") %>% ymd_hms()))
+> <br> tripdata_202201_processed <- tripdata_202201 %>% mutate(across(c(started_at, ended_at), ~ as.POSIXct(.x, format = "%Y-%m-%d %H:%M:%S") %>% ymd_hms()))
+> <br> tripdata_202202_processed <- tripdata_202202 %>% mutate(across(c(started_at, ended_at), ~ as.POSIXct(.x, format = "%Y-%m-%d %H:%M:%S") %>% ymd_hms()))
 
 ### Combine datasets into one dataframe
 
-> all_trips <- <br>bind_rows(tripdata_202204,tripdata_202203,tripdata_202202,tripdata_202201,tripdata_202112,tripdata_202111,tripdata_202110,tripdata_202109,tripdata_202108,tripdata_202107,tripdata_202106,tripdata_202105)
-
-### Clean up required - "started_at" and "ended_at" datatype is in char instead of datetime. Convert all from char to datetime.
-
-> all_trips[['started_at']] <- ymd_hms(all_trips[['started_at']])
-> <br>all_trips[['ended_at']] <- ymd_hms(all_trips[['ended_at']])
-
-### *Note - 1186924 entries failed to parse as they were empty.*
+> all_trips <- <br>bind_rows(tripdata_202204_processed,tripdata_202203_processed,tripdata_202202_processed,tripdata_202201_processed,tripdata_202112_processed,tripdata_202111_processed,tripdata_202110_processed,tripdata_202109_processed,tripdata_202108_processed,tripdata_202107_processed,tripdata_202106_processed,tripdata_202105_processed)
 
 ## DATA PROCESSING
 
