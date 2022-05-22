@@ -217,7 +217,7 @@ median_trip_duration = median(trip_duration), mean_trip_duration = mean(trip_dur
 A tibble: 2 x 5
 |customer_typ| min_trip_duration| max_trip_duration| median_trip_dur~| mean_trip_durat~|
 |---|---|---|---|
-|*<chr>*     |               <dbl>|             <dbl>|            <dbl>|            <dbl>|
+|<chr>     |               <dbl>|             <dbl>|            <dbl>|            <dbl>|
 |---|---|---|---|
 |1 casual    |                    0|            55944.|            15.4 |             30.5|
 |---|---|---|---|
