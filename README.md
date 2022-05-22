@@ -205,5 +205,6 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 
 ### summary of trip_duration for all trips
 > summary(all_trips_v2$trip_duration)
+> <br>
 > <br> Min. 1st Qu.  Median    Mean   3rd Qu.    Max.  
 > <br> 0.0     6.5    11.6     21.0    20.9    55944.2 
