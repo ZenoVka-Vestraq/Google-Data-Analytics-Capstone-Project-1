@@ -165,10 +165,37 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 > <br>
 > <br> *Month when the trip started*
 > <br> all_trips$month <- format(as.Date(all_trips$start_time),'%b_%y')
+> <br> *Trip duration in min*
+> <br> all_trips$trip_duration <- (as.double(difftime(all_trips$end_time, all_trips$start_time)))/60
 >> *Time of the day when the trip started*
 >> <br> *Note - two-step conversion is needed to get hours-minutes-seconds in POSIXct for ggplot2*
 >> <br> all_trips$time <- format(all_trips$start_time, format = "%H:%M")
 >> <br> all_trips$time <- as.POSIXct(all_trips$time, format = "%H:%M")
-> *Trip duration in min*
-> <br> all_trips$trip_duration <- (as.double(difftime(all_trips$end_time, all_trips$start_time)))/60
 
+### Check if any trip duration is in the negative.
+
+> nrow(subset(all_trips,trip_duration < 0))
+> <br> [1] 136
+
+### Check if any testrides were made
+
+> nrow(subset(all_trips, start_station_name %like% "TEST"))
+> <br>[1] 0
+> <br> nrow(subset(all_trips, start_station_name %like% "test"))
+> <br>[1] 0
+> <br> nrow(subset(all_trips, start_station_name %like% "Test"))
+> <br>[1] 1
+
+### Remove irrelavant data
+
+> *negative trip durations*
+> <br> all_trips_v2 <- all_trips[!(all_trips$trip_duration < 0),]
+> <br>
+> <br> *remove test rides*
+> <br> all_trips_v2<- all_trips_v2[!((all_trips_v2$start_station_name %like% "Test" | all_trips_v2$start_station_name %like% "test")),]
+
+### Check if there is only two customer types
+
+> table(all_trips_v2$customer_type)
+> <br>  casual  member 
+> <br> 2063084 2507406 
