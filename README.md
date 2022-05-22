@@ -165,6 +165,7 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 > <br>
 > <br> *Month when the trip started*
 > <br> all_trips$month <- format(as.Date(all_trips$start_time),'%b_%y')
+> <br>
 > <br> *Trip duration in min*
 > <br> all_trips$trip_duration <- (as.double(difftime(all_trips$end_time, all_trips$start_time)))/60
 >> *Time of the day when the trip started*
@@ -197,5 +198,5 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 ### Check if there is only two customer types
 
 > table(all_trips_v2$customer_type)
-> <br>  casual  member 
-> <br> 2063084 2507406 
+>> casual  member 
+>> <br> 2063084 2507406 
