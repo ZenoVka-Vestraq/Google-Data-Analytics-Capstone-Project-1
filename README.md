@@ -158,4 +158,17 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 > all_trips <- all_trips %>% 
 <br> rename(ride_type = rideable_type,start_time = started_at,end_time = ended_at,customer_type = member_casual)
   
-###
+### Add new columns that will be used for agregation.
+
+> *Day of the week the trip started*
+> <br> all_trips$day_of_the_week <- format(as.Date(all_trips$start_time),'%a')
+> <br>
+> <br> *Month when the trip started*
+> <br> all_trips$month <- format(as.Date(all_trips$start_time),'%b_%y')
+>> *Time of the day when the trip started*
+>> <br> *Note - two-step conversion is needed to get hours-minutes-seconds in POSIXct for ggplot2*
+>> <br> all_trips$time <- format(all_trips$start_time, format = "%H:%M")
+>> <br> all_trips$time <- as.POSIXct(all_trips$time, format = "%H:%M")
+> *Trip duration in min*
+> <br> all_trips$trip_duration <- (as.double(difftime(all_trips$end_time, all_trips$start_time)))/60
+
