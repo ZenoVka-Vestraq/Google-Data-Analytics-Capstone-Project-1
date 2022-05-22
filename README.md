@@ -205,16 +205,11 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 
 ### summary of trip_duration for all trips
 > summary(all_trips_v2$trip_duration)
->> Min. 1st Qu.  Median    Mean   3rd Qu.    Max.  
->> 0.0     6.5    11.6     21.0    20.9    55944.2 
+>> 
 
 ### summary of trip_duration by customer_type
 > all_trips_v2 %>%
 ><br>    group_by(customer_type) %>%
 ><br>     summarise(min_trip_duration = min(trip_duration),max_trip_duration = max(trip_duration),
 ><br>               median_trip_duration = median(trip_duration), mean_trip_duration = mean(trip_duration))
->> A tibble: 2 x 5
->><br>  customer_type min_trip_duration max_trip_duration median_trip_dur~ mean_trip_durat~
->><br>  <chr>                     <dbl>             <dbl>            <dbl>            <dbl>
->><br>1 casual                        0            55944.            15.4              30.5
->><br>2 member                        0             1500.             9.28             13.2
+>> 
