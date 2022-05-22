@@ -126,7 +126,7 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 
 ### Combine datasets into one dataframe
 
-> all_trips <- <br>ind_rows(tripdata_202204,tripdata_202203,tripdata_202202,tripdata_202201,tripdata_202112,tripdata_202111,tripdata_202110,tripdata_202109,tripdata_202108,tripdata_202107,tripdata_202106,tripdata_202105)
+> all_trips <- <br>bind_rows(tripdata_202204,tripdata_202203,tripdata_202202,tripdata_202201,tripdata_202112,tripdata_202111,tripdata_202110,tripdata_202109,tripdata_202108,tripdata_202107,tripdata_202106,tripdata_202105)
 
 ### Clean up required - "started_at" and "ended_at" datatype is in char instead of datetime. Convert all from char to datetime.
 
