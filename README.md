@@ -272,7 +272,7 @@ A tibble: 2 x 5
 
 *Visualisation*
 
- all_trips_v2 %>%  
+<p> all_trips_v2 %>%  
 <br>     group_by(customer_type, day_of_the_week) %>% 
 <br>     summarise(number_of_rides = n()) %>% 
 <br>     arrange(customer_type, day_of_the_week)  %>% 
