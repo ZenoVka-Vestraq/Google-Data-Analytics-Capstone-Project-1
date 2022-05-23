@@ -238,15 +238,17 @@ A tibble: 2 x 5
 
 ### Total number of trips by customer type and day of the week
 
-> *Order time and month column for easier reference
-><br> 
-><br> all_trips_v2$day_of_the_week <- ordered(all_trips_v2$day_of_the_week, levels=c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"))
+*Order time and month column for easier reference*
+> all_trips_v2$day_of_the_week <- ordered(all_trips_v2$day_of_the_week, levels=c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"))
 ><br> 
 ><br> all_trips_v2$month <- ordered(all_trips_v2$month, levels=c("May_21", "Jun_21", "Jul_21", "Aug_21", "Sep_21", "Oct_21", "Nov_21", "Dec_21", "Jan_22", "Feb_22", "Mar_22", "Apr_22"))
->> all_trips_v2 %>% 
->><br> group_by(customer_type, day_of_the_week) %>%  
->><br> summarise(number_of_rides = n(),average_duration_mins = mean(trip_duration)) %>% 
->><br> arrange(customer_type, desc(number_of_rides))
+
+*Summarise into table*
+
+all_trips_v2 %>% 
+<br> group_by(customer_type, day_of_the_week) %>%  
+<br> summarise(number_of_rides = n(),average_duration_mins = mean(trip_duration)) %>% 
+<br> arrange(customer_type, desc(number_of_rides))
 
 *A tibble: 14 x 4*
 *Groups:   customer_type [2]*
