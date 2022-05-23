@@ -281,5 +281,4 @@ A tibble: 2 x 5
 ><br>     geom_col(width=0.5, position = position_dodge(width=0.5)) +
 ><br>     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
 
-[![Total trips by customer type Vs. Day of the week](./Total trips by customer type Vs. Day of the week.png)
-
+![Total trips by customer type Vs  Day of the week](https://user-images.githubusercontent.com/105503334/169847617-d0521376-e6e1-46f6-964a-32a6119686f8.png)
