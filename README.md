@@ -269,3 +269,14 @@ A tibble: 2 x 5
 |12 member        |Mon              |        445628 |                 12.7|
 |13 member        |Sat              |        442737 |                 14.8|
 |14 member        |Sun              |        388017 |                 15.1|
+
+*Visualisation*
+
+> all_trips_v2 %>%  
+<br>     group_by(customer_type, day_of_the_week) %>% 
+     summarise(number_of_rides = n()) %>% 
+     arrange(customer_type, day_of_the_week)  %>% 
+     ggplot(aes(x = day_of_the_week, y = number_of_rides, fill = customer_type)) +
+     labs(title ="Total trips by customer type Vs. Day of the week") +
+     geom_col(width=0.5, position = position_dodge(width=0.5)) +
+     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
