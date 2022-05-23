@@ -245,10 +245,10 @@ A tibble: 2 x 5
 
 *Summarise into table*
 
-all_trips_v2 %>% 
-<br> group_by(customer_type, day_of_the_week) %>%  
-<br> summarise(number_of_rides = n(),average_duration_mins = mean(trip_duration)) %>% 
-<br> arrange(customer_type, desc(number_of_rides))
+> all_trips_v2 %>% 
+> <br>group_by(customer_type, day_of_the_week) %>%  
+> <br>summarise(number_of_rides = n(),average_duration_mins = mean(trip_duration)) %>% 
+> <br>arrange(customer_type, desc(number_of_rides))
 
 *A tibble: 14 x 4*
 *Groups:   customer_type [2]*
