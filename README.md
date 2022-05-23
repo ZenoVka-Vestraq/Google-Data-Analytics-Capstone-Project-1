@@ -311,3 +311,6 @@ A tibble: 2 x 5
 ><br> scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
 
 ![Total trips by customer type Vs  Month](https://user-images.githubusercontent.com/105503334/169853159-14f28653-d9a4-4836-9b22-07dea0663b4e.png)
+
+*Observation - June, July, Auguest and September are the most busy months of the year, with both members and casual riders exceeding 350,000 trips. We could draw a correlation to seasonal effect, in which the period belongs to late spring and summer. Generally we can observe that summer commands the highest ridership whereas winter commands the lowest ridership.*
+
