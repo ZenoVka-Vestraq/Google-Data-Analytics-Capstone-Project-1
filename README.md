@@ -251,6 +251,7 @@ A tibble: 2 x 5
 *A tibble: 14 x 4*
 *Groups:   customer_type [2]*
 |   customer_type |day_of_the_week |number_of_rides |average_duration_mins|
+|-----------------|-----------------|---------------|---------------------|
 |   <chr>         |<ord>            |         <int> |                <dbl>|
 | 1 casual        |Sat              |        558610 |                 34.2|
 | 2 casual        |Sun              |        476993 |                 37.0|
