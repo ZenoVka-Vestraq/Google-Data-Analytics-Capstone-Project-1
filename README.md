@@ -282,3 +282,18 @@ A tibble: 2 x 5
 ><br>     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
 
 ![Total trips by customer type Vs  Day of the week](https://user-images.githubusercontent.com/105503334/169847617-d0521376-e6e1-46f6-964a-32a6119686f8.png)
+
+*Observation - Casual riders see the highest usage on weekends (Saturdays and Sundays) whereas Members are fairly consistent throughout week, although with noticeable lower usages on Sundays. Members are the the dominant users on weekdays whereas Casual Riders are the dominant users on weekends.*
+
+### Average number of trips by customer type and month
+
+><p> unique(all_trips$month)
+><br>
+><br> "Apr_22" "Mar_22" "Feb_22" "Jan_22" "Dec_21" "Nov_21" "Oct_21" "Sep_21" "Aug_21" "Jul_21" "Jun_21" "May_21"
+><br> 
+><br> all_trips_v2 %>% 
+><br>   group_by(customer_type, month) %>%  
+><br>   summarise(number_of_rides = n(),`average_duration_(mins)` = mean(trip_duration)) %>% 
+><br>   arrange(customer_type,desc(number_of_rides))
+
+![Average number of trips by customer type and month table](https://user-images.githubusercontent.com/105503334/169851198-6e9c7ecc-a88a-489b-9d93-b666cf8d3983.png)
