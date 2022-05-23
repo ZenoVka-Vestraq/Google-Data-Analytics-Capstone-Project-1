@@ -245,10 +245,10 @@ A tibble: 2 x 5
 
 *Summarise into table*
 
-> all_trips_v2 %>% 
-> <br>group_by(customer_type, day_of_the_week) %>%  
-> <br>summarise(number_of_rides = n(),average_duration_mins = mean(trip_duration)) %>% 
-> <br>arrange(customer_type, desc(number_of_rides))
+> <p> all_trips_v2 %>% 
+> <br> group_by(customer_type, day_of_the_week) %>%  
+> <br> summarise(number_of_rides = n(),average_duration_mins = mean(trip_duration)) %>% 
+> <br> arrange(customer_type, desc(number_of_rides))
 
 *A tibble: 14 x 4*
 *Groups:   customer_type [2]*
@@ -272,11 +272,11 @@ A tibble: 2 x 5
 
 *Visualisation*
 
-<p> all_trips_v2 %>%  
-<br>     group_by(customer_type, day_of_the_week) %>% 
-<br>     summarise(number_of_rides = n()) %>% 
-<br>     arrange(customer_type, day_of_the_week)  %>% 
-<br>     ggplot(aes(x = day_of_the_week, y = number_of_rides, fill = customer_type)) +
-<br>     labs(title ="Total trips by customer type Vs. Day of the week") +
-<br>     geom_col(width=0.5, position = position_dodge(width=0.5)) +
-<br>     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
+><p> all_trips_v2 %>%  
+><br>     group_by(customer_type, day_of_the_week) %>% 
+><br>     summarise(number_of_rides = n()) %>% 
+><br>     arrange(customer_type, day_of_the_week)  %>% 
+><br>     ggplot(aes(x = day_of_the_week, y = number_of_rides, fill = customer_type)) +
+><br>     labs(title ="Total trips by customer type Vs. Day of the week") +
+><br>     geom_col(width=0.5, position = position_dodge(width=0.5)) +
+><br>     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
