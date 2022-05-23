@@ -294,6 +294,20 @@ A tibble: 2 x 5
 ><br> all_trips_v2 %>% 
 ><br>   group_by(customer_type, month) %>%  
 ><br>   summarise(number_of_rides = n(),`average_duration_(mins)` = mean(trip_duration)) %>% 
-><br>   arrange(customer_type,desc(number_of_rides))
+><br>   arrange(customer_type,desc(number_of_rides))%>%View()
 
 ![Average number of trips by customer type and month table](https://user-images.githubusercontent.com/105503334/169851198-6e9c7ecc-a88a-489b-9d93-b666cf8d3983.png)
+
+*Visualisation*
+
+><p> all_trips_v2 %>%  
+><br> group_by(customer_type, month) %>% 
+><br> summarise(number_of_rides = n()) %>% 
+><br> arrange(customer_type, month)  %>% 
+><br> ggplot(aes(x = month, y = number_of_rides, fill = customer_type)) +
+><br> labs(title ="Total trips by customer type Vs. Month") +
+><br> theme(axis.text.x = element_text(angle = 30)) +
+><br> geom_col(width=0.5, position = position_dodge(width=0.5)) +
+><br> scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
+
+![Total trips by customer type Vs  Month](https://user-images.githubusercontent.com/105503334/169853159-14f28653-d9a4-4836-9b22-07dea0663b4e.png)
