@@ -187,7 +187,7 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 ### Check if any trip duration is in the negative.
 
 > nrow(subset(all_trips,trip_duration < 0))
-> <br> [1] 136
+> <br> [1] 139
 
 ### Check if any testrides were made
 
@@ -210,7 +210,7 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 
 > table(all_trips_v2$customer_type)
 >> casual  member 
->> <br> 2063084 2507406 
+>> <br> 2536297 3221114  
 
 ## ANALYSE AND GAIN INSIGHTS
 
@@ -218,7 +218,7 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 summary(all_trips_v2$trip_duration)
 | Min. | 1st Qu. | Median | Mean | 3rd Qu. | Max. | 
 |---|---|---|---|---|---|
-| 0.0 | 6.5 | 11.6 | 21.0 | 20.9 | 55944.2 |
+| 0.0 | 6.43 | 11.52 | 21.14 | 21.00 | 55944.15 |
 
 ### summary of trip_duration by customer_type
 all_trips_v2 %>%
@@ -231,7 +231,38 @@ A tibble: 2 x 5
   | customer_typ | min_trip_duration | max_trip_duration | median_trip_dur~ | mean_trip_durat~ |
 |--------------|-------------------|-------------------|------------------|------------------|
 | <chr>        | <dbl>             | <dbl>             | <dbl>            | <dbl>            |
-| 1 casual     | 0                 | 55944.            | 15.4             | 30.5             |
-| 2 member     | 0                 | 1500.             | 9.28             | 13.2             |
+| 1 casual     | 0                 | 55944.            | 15.6             | 31.3             |
+| 2 member     | 0                 | 1560.             | 9.1              | 13.1             |
 
-### 
+*Note - member mean trip duration (13.1) is lower than all trip mean trip duration (21.14), whereas casual riders mean trip duration (31.3) is higher than the the mean trip duration of all trips. This tells us that casual riders statistically take the bikes out for a longer duration compared to members over sample size.
+
+### Total number of trips by customer type and day of the week
+
+> *Order time and month column for easier reference
+><br> 
+><br> all_trips_v2$day_of_the_week <- ordered(all_trips_v2$day_of_the_week, levels=c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"))
+><br> 
+><br> all_trips_v2$month <- ordered(all_trips_v2$month, levels=c("May_21", "Jun_21", "Jul_21", "Aug_21", "Sep_21", "Oct_21", "Nov_21", "Dec_21", "Jan_22", "Feb_22", "Mar_22", "Apr_22"))
+>> all_trips_v2 %>% 
+>><br> group_by(customer_type, day_of_the_week) %>%  
+>><br> summarise(number_of_rides = n(),average_duration_mins = mean(trip_duration)) %>% 
+>><br> arrange(customer_type, desc(number_of_rides))
+
+*A tibble: 14 x 4*
+*Groups:   customer_type [2]*
+|   customer_type |day_of_the_week |number_of_rides |average_duration_mins|
+|   <chr>         |<ord>            |         <int> |                <dbl>|
+| 1 casual        |Sat              |        558610 |                 34.2|
+| 2 casual        |Sun              |        476993 |                 37.0|
+| 3 casual        |Fri              |        358197 |                 29.2|
+| 4 casual        |Thu              |        298061 |                 27.9|
+| 5 casual        |Mon              |        289026 |                 31.1|
+| 6 casual        |Wed              |        284866 |                 27.1|
+| 7 casual        |Tue              |        270544 |                 26.5|
+| 8 member        |Wed              |        506935 |                 12.4|
+| 9 member        |Tue              |        498679 |                 12.3|
+|10 member        |Thu              |        485840 |                 12.4|
+|11 member        |Fri              |        453278 |                 12.9|
+|12 member        |Mon              |        445628 |                 12.7|
+|13 member        |Sat              |        442737 |                 14.8|
+|14 member        |Sun              |        388017 |                 15.1|
