@@ -225,7 +225,8 @@ all_trips_v2 %>%
 <br> group_by(customer_type) %>%
 <br> summarise(min_trip_duration = min(trip_duration),max_trip_duration = max(trip_duration),
 <br> median_trip_duration = median(trip_duration), mean_trip_duration = mean(trip_duration))
-<p> *A tibble: 2 x 5*
+
+A tibble: 2 x 5
 
   | customer_typ | min_trip_duration | max_trip_duration | median_trip_dur~ | mean_trip_durat~ |
 |--------------|-------------------|-------------------|------------------|------------------|
