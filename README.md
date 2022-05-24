@@ -355,6 +355,4 @@ A tibble: 2 x 5
 
 ![Demand over 24 hours of a day](https://user-images.githubusercontent.com/105503334/169946121-6996e575-b5f8-4d5b-99f4-c36aa044db52.png)
 
-*Observation - 
-
-For both casual riders and members, they both experience peak demand hours from 4 to 7pm. The distinction between the two though, is that casual riders steadily picks up in demand as the days passed, peaking at 5pm, whilst members demands picks up early from 5 to 7am, plateau from 7 to 9am before dropping demands from 9 to 10am before slowly picking up demands again till peaking at 5pm. It is possible to draw a correlation to in members demands to office hours.
+*Observation - For both casual riders and members, they both experience peak demand hours from 4 to 7pm. The distinction between the two though, is that casual riders steadily picks up in demand as the days passed, peaking at 5pm, whilst members demands picks up early from 5 to 7am, plateau from 7 to 9am before dropping demands from 9 to 10am before slowly picking up demands again till peaking at 5pm. It is possible to draw a correlation to in members demands to office hours.*
