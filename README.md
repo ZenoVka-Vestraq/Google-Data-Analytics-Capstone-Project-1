@@ -339,6 +339,4 @@ A tibble: 2 x 5
 
 ![Average trip duration by customer type Vs  Month](https://user-images.githubusercontent.com/105503334/169943087-dd1110c5-aa15-44f6-99dd-6413feee490c.png)
 
-*Observation - 
-
-Average trip duration of member riders is anywhere between 10-15 minutes throughout the year, while average trip duration of casual members ranges within 38~23 minutes to more than an hour depending on time of the year. It is does not seems to be a direct correlation between the months and trip durations.
+*Observation - Average trip duration of member riders is anywhere between 10-15 minutes throughout the year, while average trip duration of casual members ranges within 38~23 minutes to more than an hour depending on time of the year. It is does not seems to be a direct correlation between the months and trip durations.*
