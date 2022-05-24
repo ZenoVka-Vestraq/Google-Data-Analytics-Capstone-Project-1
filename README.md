@@ -326,3 +326,19 @@ A tibble: 2 x 5
 ![Average trip duration by customer type Vs  Day of the week](https://user-images.githubusercontent.com/105503334/169939956-05218022-81df-472f-8b66-1f649b42271f.png)
 
 *Observation - The average trip duration of a casual rider is more than twice that of a member. this however does not equate to double the distance travelled. It is also indicated that both members and casual riders have longer trip durations over weekends.*
+
+*Visualisation*
+
+><p> all_trips_v2 %>%  
+><br>  group_by(customer_type, month) %>% 
+><br>  summarise(average_trip_duration = mean(trip_duration)) %>%
+><br>  ggplot(aes(x = month, y = average_trip_duration, fill = customer_type)) +
+><br>  geom_col(width=0.5, position = position_dodge(width=0.5)) + 
+><br>  labs(title ="Average trip duration by customer type Vs. Month") +
+><br>  theme(axis.text.x = element_text(angle = 30))
+
+![Average trip duration by customer type Vs  Month](https://user-images.githubusercontent.com/105503334/169943087-dd1110c5-aa15-44f6-99dd-6413feee490c.png)
+
+*Observation - 
+
+Average trip duration of member riders is anywhere between 10-15 minutes throughout the year, while average trip duration of casual members ranges within 38~23 minutes to more than an hour depending on time of the year. It is does not seems to be a direct correlation between the months and trip durations.
