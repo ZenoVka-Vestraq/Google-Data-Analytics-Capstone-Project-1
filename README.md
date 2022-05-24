@@ -314,3 +314,15 @@ A tibble: 2 x 5
 
 *Observation - June, July, Auguest and September are the most busy months of the year, with both members and casual riders exceeding 350,000 trips. We could draw a correlation to seasonal effect, in which the period belongs to late spring and summer. Generally we can observe that summer commands the highest ridership whereas winter commands the lowest ridership.*
 
+*Visualisation*
+
+><p> all_trips_v2 %>%  
+><br>  group_by(customer_type, day_of_the_week) %>% 
+><br>  summarise(average_trip_duration = mean(trip_duration)) %>%
+><br>  ggplot(aes(x = day_of_the_week, y = average_trip_duration, fill = customer_type)) +
+><br>  geom_col(width=0.5, position = position_dodge(width=0.5)) + 
+><br>  labs(title ="Average trip duration by customer type Vs. Day of the week")
+
+![Average trip duration by customer type Vs  Day of the week](https://user-images.githubusercontent.com/105503334/169939956-05218022-81df-472f-8b66-1f649b42271f.png)
+
+*Observation - The average trip duration of a casual rider is more than twice that of a member. this however does not equate to double the distance travelled. It is also indicated that both members and casual riders have longer trip durations over weekends.*
