@@ -340,3 +340,21 @@ A tibble: 2 x 5
 ![Average trip duration by customer type Vs  Month](https://user-images.githubusercontent.com/105503334/169943087-dd1110c5-aa15-44f6-99dd-6413feee490c.png)
 
 *Observation - Average trip duration of member riders is anywhere between 10-15 minutes throughout the year, while average trip duration of casual members ranges within 38~23 minutes to more than an hour depending on time of the year. It is does not seems to be a direct correlation between the months and trip durations.*
+
+*Visualisation*
+
+><p> all_trips_v2 %>%  
+><br>  group_by(customer_type, time) %>% 
+><br>  summarise(number_of_trips = n()) %>%
+><br>  ggplot(aes(x = time, y = number_of_trips, color = customer_type, group = customer_type)) +
+><br>  geom_line() +
+><br>  scale_x_datetime(date_breaks = "1 hour", minor_breaks = NULL,
+><br>                   date_labels = "%H:%M", expand = c(0,0)) +
+><br>  theme(axis.text.x = element_text(angle = 90)) +
+><br>  labs(title ="Demand over 24 hours of a day", x = "Time of the day")
+
+![Demand over 24 hours of a day](https://user-images.githubusercontent.com/105503334/169946121-6996e575-b5f8-4d5b-99f4-c36aa044db52.png)
+
+*Observation - 
+
+For both casual riders and members, they both experience peak demand hours from 4 to 7pm. The distinction between the two though, is that casual riders steadily picks up in demand as the days passed, peaking at 5pm, whilst members demands picks up early from 5 to 7am, plateau from 7 to 9am before dropping demands from 9 to 10am before slowly picking up demands again till peaking at 5pm. It is possible to draw a correlation to in members demands to office hours.
