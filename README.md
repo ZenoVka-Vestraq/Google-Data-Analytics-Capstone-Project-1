@@ -238,7 +238,7 @@ A tibble: 2 x 5
 | 1 casual     | 0                 | 55944.            | 15.6             | 31.3             |
 | 2 member     | 0                 | 1560.             | 9.1              | 13.1             |
 
-*Note - member mean trip duration (13.1) is lower than all trip mean trip duration (21.14), whereas casual riders mean trip duration (31.3) is higher than the the mean trip duration of all trips. This tells us that casual riders statistically take the bikes out for a longer duration compared to members over sample size.
+*Note - member mean trip duration (13.1) is lower than all trip mean trip duration (21.14), whereas casual riders mean trip duration (31.3) is higher than the the mean trip duration of all trips. This tells us that casual riders statistically take the bikes out for a longer duration compared to members over sample size.*
 
 ### Total number of trips by customer type and day of the week
 
