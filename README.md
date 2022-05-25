@@ -126,7 +126,11 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 
 ### Cleanup Required - Changing dateTime format for tripdata_202105, tripdata_202203 and tripdata_202204
 
-> tripdata_202105_processed <- tripdata_202105_processed %>% mutate(across(c(started_at, ended_at), dmy_hms))
+> tripdata_202105_processed <- tripdata_202105
+> <br> tripdata_202203_processed <- tripdata_202203
+> <br> tripdata_202204_processed <- tripdata_202204
+> <br>
+> <br> tripdata_202105_processed <- tripdata_202105_processed %>% mutate(across(c(started_at, ended_at), dmy_hms))
 > <br> tripdata_202203_processed <- tripdata_202203_processed %>% mutate(across(c(started_at, ended_at), dmy_hms))
 > <br> tripdata_202204_processed <- tripdata_202204_processed %>% mutate(across(c(started_at, ended_at), dmy_hms))
 
