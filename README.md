@@ -363,14 +363,6 @@ A tibble: 2 x 5
 
 *Visualisation*
 
-Finding out unique stations
+Find and count unique start_lat and start_lng
 
-> unique_station_name <- unique(all_trips_v2[c("start_station_name")])
-
-Count the number of times a station has been recorded
-
-> start_station_count <- all_trips_v2 %>% count(start_station_name)
-
-Remove blank entry
-
-> start_station_count <- start_station_count[!(start_station_count$n == 790189),]
+> start_station_lat_long_count <- all_trips_v2 %>% count(start_lat,start_lng)
