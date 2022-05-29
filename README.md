@@ -216,7 +216,7 @@ The combined size of all the 12 datasets is close to 1.61 GB. Data cleaning in s
 >> casual  member 
 >> <br> 2536297 3221114  
 
-## ANALYSE AND GAIN INSIGHTS
+## ANALYSE, GAIN INSIGHTS AND SHARE DATA
 
 ### summary of trip_duration for all trips
 summary(all_trips_v2$trip_duration)
@@ -302,7 +302,7 @@ A tibble: 2 x 5
 
 ![Average number of trips by customer type and month table](https://user-images.githubusercontent.com/105503334/169851198-6e9c7ecc-a88a-489b-9d93-b666cf8d3983.png)
 
-*Visualisation*
+*Visualisation 2*
 
 ><p> all_trips_v2 %>%  
 ><br> group_by(customer_type, month) %>% 
@@ -318,7 +318,7 @@ A tibble: 2 x 5
 
 *Observation - June, July, Auguest and September are the most busy months of the year, with both members and casual riders exceeding 350,000 trips. We could draw a correlation to seasonal effect, in which the period belongs to late spring and summer. Generally we can observe that summer commands the highest ridership whereas winter commands the lowest ridership.*
 
-*Visualisation*
+*Visualisation 3*
 
 ><p> all_trips_v2 %>%  
 ><br>  group_by(customer_type, day_of_the_week) %>% 
@@ -331,7 +331,7 @@ A tibble: 2 x 5
 
 *Observation - The average trip duration of a casual rider is more than twice that of a member. this however does not equate to double the distance travelled. It is also indicated that both members and casual riders have longer trip durations over weekends.*
 
-*Visualisation*
+*Visualisation 4*
 
 ><p> all_trips_v2 %>%  
 ><br>  group_by(customer_type, month) %>% 
@@ -345,7 +345,7 @@ A tibble: 2 x 5
 
 *Observation - Average trip duration of member riders is anywhere between 10-15 minutes throughout the year, while average trip duration of casual members ranges within 38~23 minutes to more than an hour depending on time of the year. It is does not seems to be a direct correlation between the months and trip durations.*
 
-*Visualisation*
+*Visualisation 5*
 
 ><p> all_trips_v2 %>%  
 ><br>  group_by(customer_type, time) %>% 
@@ -361,7 +361,9 @@ A tibble: 2 x 5
 
 *Observation - For both casual riders and members, they both experience peak demand hours from 4 to 7pm. The distinction between the two though, is that casual riders steadily picks up in demand as the days passed, peaking at 5pm, whilst members demands picks up early from 5 to 7am, plateau from 7 to 9am before dropping demands from 9 to 10am before slowly picking up demands again till peaking at 5pm. It is possible to draw a correlation to in members demands to office hours.*
 
-*Visualisation*
+### Looking out for indicative areas where casual riders can be targeted for ads and marketing efforts.
+
+*Visualisation 6*
 
 Find and count unique start_lat and start_lng for casual riders (Marketing efforts are meant for converting casual riders)
 
@@ -382,7 +384,7 @@ Upload start_lat_long_casual.csv into Tableau and set the following parameters
 
 *Observation - We can safely determine that Downtown Chicago has the highest ridership take up rate and north Chicago rank second. It is interesting to note that Chicago University rank third in ridership take up rate, separate from the rank 1 and 2. Starting points are also concentrated in clear consolidated areas.*
 
-*Visualisation*
+*Visualisation 7*
 
 Find and count unique end_lat and end_lng for casual riders (Marketing efforts are meant for converting casual riders)
 
@@ -402,4 +404,20 @@ Upload end_lat_long_casual.csv into Tableau and set the following parameters
 
 *Observation - We can safely determine that Downtown Chicago has the highest ridership end destination and north Chicago rank second. unsurprisingly, Chicago University takes up third place. However with end trip, Starting points are also concentrated in clear consolidated areas. We could oso derived that both Start and End points are concentrated in the same locale, this makes it evident the areas ranked 1, 2 and 3 should be targeted to have the most reach to the intended casual riders.*
 
- 
+ ## ACT ON INSIGHTS AND PROVIDE RECOMMENDATIONS
+
+###Key Takeaways
+
+1. Casual customers use bikeshare services more during weekends, while members use them consistently over the entire week.
+
+2. Average trip duration of casual riders is more than twice that of member rider over any given day of the week.
+
+3. Casual riders using the service dominantly in Chicago Downtown, North Chicago and Chicago University.
+
+### Recommendations
+
+A. Gain Majority of Casual Riders' awareness of any marketing campaign by focusing all efforts in the top 3 identified zones/areas.
+
+B. Target Casual riders over the weekend where the demands are the highest.
+
+C. Make long duration rides more expensive as a casual riders, to coax them to transit into a member to "save cost".
