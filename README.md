@@ -367,7 +367,7 @@ Find and count unique start_lat and start_lng
 
 > start_station_lat_long_count <- all_trips_v2 %>% count(start_lat,start_lng)
 
-Extract and save all_trips_v2 as CSV file to be used in Tableau
+Extract and save start_station_lat_long_count as CSV file to be used in Tableau
 
 > write.csv(start_station_lat_long_count,"D:\\Data Analytics Case Study 1\\Projects\\lat_long_map.csv", row.names = FALSE)
 
@@ -379,5 +379,26 @@ Upload lat_long_map.csv into Tableau and set the following parameters
 
 ![image](https://user-images.githubusercontent.com/105503334/170877083-ab160be7-e89b-4e15-bfd2-bf560fbbbe41.png)
 
-*Observation - We can safely determine that Downtown Chicago has the highest ridership take up rate and north Chicago rank second. It is interesting to note that Chicago University rank third in ridership take up rate, separate from the rank 1 and 2.*
+*Observation - We can safely determine that Downtown Chicago has the highest ridership take up rate and north Chicago rank second. It is interesting to note that Chicago University rank third in ridership take up rate, separate from the rank 1 and 2. Starting points are also concentrated in clear consolidated areas.*
 
+*Visualisation*
+
+Find and count unique end_lat and end_lng
+
+> end_station_lat_long_count <- all_trips_v2 %>% count(end_lat,end_lng)
+
+Extract and save end_station_lat_long_count as CSV file to be used in Tableau
+
+> write.csv(end_station_lat_long_count,"D:\\Data Analytics Case Study 1\\Projects\\lat_long_map_end.csv", row.names = FALSE)
+
+Upload lat_long_map_end.csv into Tableau and set the following parameters
+
+> Set end_lng as columns
+><br> Set end_lat as Rows
+><br> Set N(No. of times the same end points was recorded) as Size
+
+![image](https://user-images.githubusercontent.com/105503334/170878587-3c0d5d9f-afbd-46e1-b17e-97d032fc1ae6.png)
+
+*Observation - We can safely determine that Downtown Chicago has the highest ridership end destination and north Chicago rank second. unsurprisingly, Chicago University takes up third place. However with end trip, the locations are not as concentrated as compared to start trip, this could a result of picking up a bike at a designated spot and leaving that anywhere the destination ends. We could oso derived that both Start and End points are concentrated in the same locale, this makes it evident the areas we should target to have the highest awareness.*
+
+ 
