@@ -363,15 +363,16 @@ A tibble: 2 x 5
 
 *Visualisation*
 
-Find and count unique start_lat and start_lng
+Find and count unique start_lat and start_lng for casual riders (Marketing efforts are meant for converting casual riders)
 
-> start_station_lat_long_count <- all_trips_v2 %>% count(start_lat,start_lng)
+> all_trips_v2_Casual <- all_trips_v2[!(all_trips_v2$customer_type %like% "member"),]
+><br> start_lat_long_casual <- all_trips_v2_Casual %>% count(start_lat,start_lng)
 
-Extract and save start_station_lat_long_count as CSV file to be used in Tableau
+Extract and save start_lat_long_casual as CSV file to be used in Tableau
 
-> write.csv(start_station_lat_long_count,"D:\\Data Analytics Case Study 1\\Projects\\lat_long_map.csv", row.names = FALSE)
+> write.csv(start_lat_long_casual,"D:\\Data Analytics Case Study 1\\Projects\\start_lat_long_casual.csv", row.names = FALSE)
 
-Upload lat_long_map.csv into Tableau and set the following parameters
+Upload start_lat_long_casual.csv into Tableau and set the following parameters
 
 > Set start_lng as columns
 ><br> Set start_lat as Rows
@@ -383,21 +384,21 @@ Upload lat_long_map.csv into Tableau and set the following parameters
 
 *Visualisation*
 
-Find and count unique end_lat and end_lng
+Find and count unique end_lat and end_lng for casual riders (Marketing efforts are meant for converting casual riders)
 
-> end_station_lat_long_count <- all_trips_v2 %>% count(end_lat,end_lng)
+> end_lat_long_casual <- all_trips_v2_Casual %>% count(end_lat,end_lng)
 
-Extract and save end_station_lat_long_count as CSV file to be used in Tableau
+Extract and save end_lat_long_casual as CSV file to be used in Tableau
 
-> write.csv(end_station_lat_long_count,"D:\\Data Analytics Case Study 1\\Projects\\lat_long_map_end.csv", row.names = FALSE)
+> write.csv(end_lat_long_casual,"D:\\Data Analytics Case Study 1\\Projects\\end_lat_long_casual.csv", row.names = FALSE)
 
-Upload lat_long_map_end.csv into Tableau and set the following parameters
+Upload end_lat_long_casual.csv into Tableau and set the following parameters
 
 > Set end_lng as columns
 ><br> Set end_lat as Rows
 ><br> Set N(No. of times the same end points was recorded) as Size
 
-![image](https://user-images.githubusercontent.com/105503334/170878587-3c0d5d9f-afbd-46e1-b17e-97d032fc1ae6.png)
+![image](https://user-images.githubusercontent.com/105503334/170880458-b127bdf1-ec48-4f75-b040-74a982062f1b.png)
 
 *Observation - We can safely determine that Downtown Chicago has the highest ridership end destination and north Chicago rank second. unsurprisingly, Chicago University takes up third place. However with end trip, the locations are not as concentrated as compared to start trip, this could a result of picking up a bike at a designated spot and leaving that anywhere the destination ends. We could oso derived that both Start and End points are concentrated in the same locale, this makes it evident the areas we should target to have the highest awareness.*
 
