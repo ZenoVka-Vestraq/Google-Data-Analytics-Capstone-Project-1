@@ -274,7 +274,7 @@ A tibble: 2 x 5
 |13 member        |Sat              |        442737 |                 14.8|
 |14 member        |Sun              |        388017 |                 15.1|
 
-*Visualisation*
+*Visualisation 1*
 
 ><p> all_trips_v2 %>%  
 ><br>     group_by(customer_type, day_of_the_week) %>% 
@@ -378,7 +378,7 @@ Upload start_lat_long_casual.csv into Tableau and set the following parameters
 ><br> Set start_lat as Rows
 ><br> Set N(No. of times the same starting points was recorded) as Size
 
-![image](https://user-images.githubusercontent.com/105503334/170877083-ab160be7-e89b-4e15-bfd2-bf560fbbbe41.png)
+![image](https://user-images.githubusercontent.com/105503334/170880748-512a3eb0-d6fa-4fcd-8f58-bf2739d8d464.png)
 
 *Observation - We can safely determine that Downtown Chicago has the highest ridership take up rate and north Chicago rank second. It is interesting to note that Chicago University rank third in ridership take up rate, separate from the rank 1 and 2. Starting points are also concentrated in clear consolidated areas.*
 
@@ -400,6 +400,6 @@ Upload end_lat_long_casual.csv into Tableau and set the following parameters
 
 ![image](https://user-images.githubusercontent.com/105503334/170880458-b127bdf1-ec48-4f75-b040-74a982062f1b.png)
 
-*Observation - We can safely determine that Downtown Chicago has the highest ridership end destination and north Chicago rank second. unsurprisingly, Chicago University takes up third place. However with end trip, the locations are not as concentrated as compared to start trip, this could a result of picking up a bike at a designated spot and leaving that anywhere the destination ends. We could oso derived that both Start and End points are concentrated in the same locale, this makes it evident the areas we should target to have the highest awareness.*
+*Observation - We can safely determine that Downtown Chicago has the highest ridership end destination and north Chicago rank second. unsurprisingly, Chicago University takes up third place. However with end trip, Starting points are also concentrated in clear consolidated areas. We could oso derived that both Start and End points are concentrated in the same locale, this makes it evident the areas ranked 1, 2 and 3 should be targeted to have the most reach to the intended casual riders.*
 
  
