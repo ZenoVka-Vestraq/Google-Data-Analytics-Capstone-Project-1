@@ -366,3 +366,18 @@ A tibble: 2 x 5
 Find and count unique start_lat and start_lng
 
 > start_station_lat_long_count <- all_trips_v2 %>% count(start_lat,start_lng)
+
+Extract and save all_trips_v2 as CSV file to be used in Tableau
+
+> write.csv(start_station_lat_long_count,"D:\\Data Analytics Case Study 1\\Projects\\lat_long_map.csv", row.names = FALSE)
+
+Upload lat_long_map.csv into Tableau and set the following parameters
+
+> Set start_lng as columns
+><br> Set start_lat as Rows
+><br> Set N(No. of times the same starting points was recorded) as Size
+
+![image](https://user-images.githubusercontent.com/105503334/170877083-ab160be7-e89b-4e15-bfd2-bf560fbbbe41.png)
+
+*Observation - We can safely determine that Downtown Chicago has the highest ridership take up rate and north Chicago rank second. It is interesting to note that Chicago University rank third in ridership take up rate, separate from the rank 1 and 2.*
+
