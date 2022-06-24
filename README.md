@@ -1,4 +1,4 @@
-# Google-Data-Analytics-Capstone-Project-1
+# Cyclistic Bike Share
 
 ## INTRODUCTION
 
